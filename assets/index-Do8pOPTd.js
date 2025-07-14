@@ -292,7 +292,7 @@ ${o.toString()}`)}return s&&(typeof s=="string"?l+=`?${s}`:Object.keys(s).length
       </div>
     </div>
   </div>
-`}}Zs.id="e6b7da5538";function en(){return function(r){var e=r.$,a=r.$h,t=r.$root,s=r.$f7,n=r.$f7route,i=r.$f7router,l=r.$theme,o=r.$update,c=r.$store;return a`
+`}}Zs.id="7b6747807c";function en(){return function(r){var e=r.$,a=r.$h,t=r.$root,s=r.$f7,n=r.$f7route,i=r.$f7router,l=r.$theme,o=r.$update,c=r.$store;return a`
 <div class="page" data-name="about">
   <div class="navbar">
     <div class="navbar-bg"></div>
@@ -321,7 +321,7 @@ ${o.toString()}`)}return s&&(typeof s=="string"?l+=`?${s}`:Object.keys(s).length
     </div>
   </div>
 </div>
-`}}en.id="8c5656788f";function tn(){return function(r){var e=r.$,a=r.$h,t=r.$root,s=r.$f7,n=r.$f7route,i=r.$f7router,l=r.$theme,o=r.$update,c=r.$store;return a`
+`}}en.id="70c68bf3fb";function tn(){return function(r){var e=r.$,a=r.$h,t=r.$root,s=r.$f7,n=r.$f7route,i=r.$f7router,l=r.$theme,o=r.$update,c=r.$store;return a`
 <div class="page" data-name="form">
   <div class="navbar">
     <div class="navbar-bg"></div>
@@ -562,7 +562,7 @@ ${o.toString()}`)}return s&&(typeof s=="string"?l+=`?${s}`:Object.keys(s).length
     </div>
   </div>
 </div>
-`}}tn.id="a99a04f309";function an(r,{$store:e}){const a=e.getters.products,t=()=>{e.dispatch("addProduct",{id:"4",title:"Apple iPhone 12",description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi tempora similique reiciendis, error nesciunt vero, blanditiis pariatur dolor, minima sed sapiente rerum, dolorem corrupti hic modi praesentium unde saepe perspiciatis."})};return function(s){var n=s.$,i=s.$h,l=s.$root,o=s.$f7,c=s.$f7route,d=s.$f7router,p=s.$theme,u=s.$update,h=s.$store;return i`
+`}}tn.id="ad79a9f793";function an(r,{$store:e}){const a=e.getters.products,t=()=>{e.dispatch("addProduct",{id:"4",title:"Apple iPhone 12",description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi tempora similique reiciendis, error nesciunt vero, blanditiis pariatur dolor, minima sed sapiente rerum, dolorem corrupti hic modi praesentium unde saepe perspiciatis."})};return function(s){var n=s.$,i=s.$h,l=s.$root,o=s.$f7,c=s.$f7route,d=s.$f7router,p=s.$theme,u=s.$update,h=s.$store;return i`
   <div class="page" data-name="catalog">
     <div class="navbar">
       <div class="navbar-bg"></div>
@@ -591,7 +591,7 @@ ${o.toString()}`)}return s&&(typeof s=="string"?l+=`?${s}`:Object.keys(s).length
       `}
     </div>
   </div>
-`}}an.id="4507425c65";function rn(r,{$f7route:e,$store:a}){const t=a.getters.products,s=e.params.id;let n;return t.value.forEach(i=>{i.id===s&&(n=i)}),function(i){var l=i.$,o=i.$h,c=i.$root,d=i.$f7,p=i.$f7route,u=i.$f7router,h=i.$theme,f=i.$update,m=i.$store;return o`
+`}}an.id="c8fe8399a4";function rn(r,{$f7route:e,$store:a}){const t=a.getters.products,s=e.params.id;let n;return t.value.forEach(i=>{i.id===s&&(n=i)}),function(i){var l=i.$,o=i.$h,c=i.$root,d=i.$f7,p=i.$f7route,u=i.$f7router,h=i.$theme,f=i.$update,m=i.$store;return o`
   <div class="page" data-name="product">
     <div class="navbar">
       <div class="navbar-bg"></div>
@@ -612,7 +612,7 @@ ${o.toString()}`)}return s&&(typeof s=="string"?l+=`?${s}`:Object.keys(s).length
       </div>
     </div>
   </div>
-`}}rn.id="fea57bdb16";function sn(){return function(r){var e=r.$,a=r.$h,t=r.$root,s=r.$f7,n=r.$f7route,i=r.$f7router,l=r.$theme,o=r.$update,c=r.$store;return a`
+`}}rn.id="1f31c60f1a";function sn(){return function(r){var e=r.$,a=r.$h,t=r.$root,s=r.$f7,n=r.$f7route,i=r.$f7router,l=r.$theme,o=r.$update,c=r.$store;return a`
   <div class="page" data-name="settings">
 
     <div class="navbar navbar-large">
@@ -851,7 +851,7 @@ ${o.toString()}`)}return s&&(typeof s=="string"?l+=`?${s}`:Object.keys(s).length
       </div>
     </div>
   </div>
-`}}sn.id="ba216e74bc";function nn(){return function(r){var e=r.$,a=r.$h,t=r.$root,s=r.$f7,n=r.$f7route,i=r.$f7router,l=r.$theme,o=r.$update,c=r.$store;return a`null`}}nn.id="14ea2f60ff";function on(){return function(r){var e=r.$,a=r.$h,t=r.$root,s=r.$f7,n=r.$f7route,i=r.$f7router,l=r.$theme,o=r.$update,c=r.$store;return a`null`}}on.id="57bc8a33da";function ln(){return function(r){var e=r.$,a=r.$h,t=r.$root,s=r.$f7,n=r.$f7route,i=r.$f7router,l=r.$theme,o=r.$update,c=r.$store;return a`
+`}}sn.id="4477f3b3f5";function nn(){return function(r){var e=r.$,a=r.$h,t=r.$root,s=r.$f7,n=r.$f7route,i=r.$f7router,l=r.$theme,o=r.$update,c=r.$store;return a`null`}}nn.id="eb100ca07d";function on(){return function(r){var e=r.$,a=r.$h,t=r.$root,s=r.$f7,n=r.$f7route,i=r.$f7router,l=r.$theme,o=r.$update,c=r.$store;return a`null`}}on.id="38749a6290";function ln(){return function(r){var e=r.$,a=r.$h,t=r.$root,s=r.$f7,n=r.$f7route,i=r.$f7router,l=r.$theme,o=r.$update,c=r.$store;return a`
 <div class="page" data-name="about">
     <div class="navbar navbar-large">
       <div class="navbar-bg"></div>
@@ -889,7 +889,7 @@ ${o.toString()}`)}return s&&(typeof s=="string"?l+=`?${s}`:Object.keys(s).length
     </div>
   </div>
 </div>
-`}}ln.id="4b23ac7e9d";function cr(r,{$f7:e,$on:a,$onBeforeMount:t,$onMounted:s,$onBeforeUnmount:n,$onUnmounted:i}){let l="Jimmy",o=25,c=["Tennis","Chess","Football"];const d=()=>{e.dialog.alert("Hello World")};return t(()=>{console.log("onBeforeMount")}),s(()=>{console.log("onMounted")}),n(()=>{console.log("onBeforeUnmount")}),i(()=>{console.log("onUnmounted")}),a("pageMounted",(p,u)=>{console.log("pageMounted",u)}),a("pageInit",(p,u)=>{console.log("pageInit",u)}),a("pageBeforeIn",(p,u)=>{console.log("pageBeforeIn",u)}),a("pageAfterIn",(p,u)=>{console.log("pageAfterIn",u)}),a("pageBeforeOut",(p,u)=>{console.log("pageBeforeOut",u)}),a("pageAfterOut",(p,u)=>{console.log("pageAfterOut",u)}),a("pageBeforeRemove",(p,u)=>{console.log("pageBeforeRemove",u)}),function(p){var u=p.$,h=p.$h,f=p.$root,m=p.$f7,v=p.$f7route,b=p.$f7router,g=p.$theme,w=p.$update,E=p.$store;return h`
+`}}ln.id="195ba10381";function cr(r,{$f7:e,$on:a,$onBeforeMount:t,$onMounted:s,$onBeforeUnmount:n,$onUnmounted:i}){let l="Jimmy",o=25,c=["Tennis","Chess","Football"];const d=()=>{e.dialog.alert("Hello World")};return t(()=>{console.log("onBeforeMount")}),s(()=>{console.log("onMounted")}),n(()=>{console.log("onBeforeUnmount")}),i(()=>{console.log("onUnmounted")}),a("pageMounted",(p,u)=>{console.log("pageMounted",u)}),a("pageInit",(p,u)=>{console.log("pageInit",u)}),a("pageBeforeIn",(p,u)=>{console.log("pageBeforeIn",u)}),a("pageAfterIn",(p,u)=>{console.log("pageAfterIn",u)}),a("pageBeforeOut",(p,u)=>{console.log("pageBeforeOut",u)}),a("pageAfterOut",(p,u)=>{console.log("pageAfterOut",u)}),a("pageBeforeRemove",(p,u)=>{console.log("pageBeforeRemove",u)}),function(p){var u=p.$,h=p.$h,f=p.$root,m=p.$f7,v=p.$f7route,b=p.$f7router,g=p.$theme,w=p.$update,E=p.$store;return h`
   <div class="page">
     <div class="navbar">
       <div class="navbar-bg"></div>
@@ -945,7 +945,7 @@ ${o.toString()}`)}return s&&(typeof s=="string"?l+=`?${s}`:Object.keys(s).length
       </div>
     </div>
   </div>
-`}}cr.id="b165d91706";cr.style=`
+`}}cr.id="4b46f2bfb6";cr.style=`
   p {
     margin: 10px 0;
   }
@@ -976,7 +976,7 @@ ${o.toString()}`)}return s&&(typeof s=="string"?l+=`?${s}`:Object.keys(s).length
       </div>
     </div>
   </div>
-`}}cn.id="90e817e315";function dn(){return function(r){var e=r.$,a=r.$h,t=r.$root,s=r.$f7,n=r.$f7route,i=r.$f7router,l=r.$theme,o=r.$update,c=r.$store;return a`
+`}}cn.id="688133e336";function dn(){return function(r){var e=r.$,a=r.$h,t=r.$root,s=r.$f7,n=r.$f7route,i=r.$f7router,l=r.$theme,o=r.$update,c=r.$store;return a`
 <div class="page">
   <div class="navbar">
     <div class="navbar-bg"></div>
@@ -997,7 +997,7 @@ ${o.toString()}`)}return s&&(typeof s=="string"?l+=`?${s}`:Object.keys(s).length
     </div>
   </div>
 </div>
-`}}dn.id="0990e515f4";var mu=[{path:"/",component:Zs},{path:"/about/",component:en},{path:"/form/",component:tn},{path:"/catalog/",component:an},{path:"/product/:id/",component:rn},{path:"/settings/",component:sn},{path:"/inventory/",component:nn},{path:"/delivered/",component:on},{path:"/gift/",component:ln},{path:"/dynamic-route/blog/:blogId/post/:postId/",component:cr},{path:"/request-and-load/user/:userId/",async:function({router:r,to:e,resolve:a}){var t=r.app;t.preloader.show();var s=e.params.userId;setTimeout(function(){var n={firstName:"Vladimir",lastName:"Kharlampidi",about:"Hello, i am creator of Framework7! Hope you like it!",links:[{title:"Framework7 Website",url:"http://framework7.io"},{title:"Framework7 Forum",url:"http://forum.framework7.io"}]};t.preloader.hide(),a({component:cn},{props:{user:n}})},1e3)}},{path:"(.*)",component:dn}];Xe.use([Ss]);ze.use([bs,ws,ys,Es,$s,Ts,sr,Ds,As,Ls,Rs,Hs,Fs,zs,Vs,Ns,qs,Ys]);const gu=Xa({state:{products:[{id:"1",title:"Apple iPhone 8",description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi tempora similique reiciendis, error nesciunt vero, blanditiis pariatur dolor, minima sed sapiente rerum, dolorem corrupti hic modi praesentium unde saepe perspiciatis."},{id:"2",title:"Apple iPhone 8 Plus",description:"Velit odit autem modi saepe ratione totam minus, aperiam, labore quia provident temporibus quasi est ut aliquid blanditiis beatae suscipit odio vel! Nostrum porro sunt sint eveniet maiores, dolorem itaque!"},{id:"3",title:"Apple iPhone X",description:"Expedita sequi perferendis quod illum pariatur aliquam, alias laboriosam! Vero blanditiis placeat, mollitia necessitatibus reprehenderit. Labore dolores amet quos, accusamus earum asperiores officiis assumenda optio architecto quia neque, quae eum."}]},getters:{products({state:r}){return r.products}},actions:{addProduct({state:r},e){r.products=[...r.products,e]}}});function pn(r,{$f7:e,$update:a}){let t="",s="";const n=o=>{t=o.target.value,a()},i=o=>{s=o.target.value,a()},l=()=>{e.dialog.alert("Username: "+t+"<br/>Password: "+s,()=>{e.loginScreen.close()})};return function(o){var c=o.$,d=o.$h,p=o.$root,u=o.$f7,h=o.$f7route,f=o.$f7router,m=o.$theme,v=o.$update,b=o.$store;return d`
+`}}dn.id="2eac9eacc6";var mu=[{path:"/",component:Zs},{path:"/about/",component:en},{path:"/form/",component:tn},{path:"/catalog/",component:an},{path:"/product/:id/",component:rn},{path:"/settings/",component:sn},{path:"/inventory/",component:nn},{path:"/delivered/",component:on},{path:"/gift/",component:ln},{path:"/dynamic-route/blog/:blogId/post/:postId/",component:cr},{path:"/request-and-load/user/:userId/",async:function({router:r,to:e,resolve:a}){var t=r.app;t.preloader.show();var s=e.params.userId;setTimeout(function(){var n={firstName:"Vladimir",lastName:"Kharlampidi",about:"Hello, i am creator of Framework7! Hope you like it!",links:[{title:"Framework7 Website",url:"http://framework7.io"},{title:"Framework7 Forum",url:"http://forum.framework7.io"}]};t.preloader.hide(),a({component:cn},{props:{user:n}})},1e3)}},{path:"(.*)",component:dn}];Xe.use([Ss]);ze.use([bs,ws,ys,Es,$s,Ts,sr,Ds,As,Ls,Rs,Hs,Fs,zs,Vs,Ns,qs,Ys]);const gu=Xa({state:{products:[{id:"1",title:"Apple iPhone 8",description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi tempora similique reiciendis, error nesciunt vero, blanditiis pariatur dolor, minima sed sapiente rerum, dolorem corrupti hic modi praesentium unde saepe perspiciatis."},{id:"2",title:"Apple iPhone 8 Plus",description:"Velit odit autem modi saepe ratione totam minus, aperiam, labore quia provident temporibus quasi est ut aliquid blanditiis beatae suscipit odio vel! Nostrum porro sunt sint eveniet maiores, dolorem itaque!"},{id:"3",title:"Apple iPhone X",description:"Expedita sequi perferendis quod illum pariatur aliquam, alias laboriosam! Vero blanditiis placeat, mollitia necessitatibus reprehenderit. Labore dolores amet quos, accusamus earum asperiores officiis assumenda optio architecto quia neque, quae eum."}]},getters:{products({state:r}){return r.products}},actions:{addProduct({state:r},e){r.products=[...r.products,e]}}});function pn(r,{$f7:e,$update:a}){let t="",s="";const n=o=>{t=o.target.value,a()},i=o=>{s=o.target.value,a()},l=()=>{e.dialog.alert("Username: "+t+"<br/>Password: "+s,()=>{e.loginScreen.close()})};return function(o){var c=o.$,d=o.$h,p=o.$root,u=o.$f7,h=o.$f7route,f=o.$f7router,m=o.$theme,v=o.$update,b=o.$store;return d`
   <div id="app">
     <!-- Views/Tabs container -->
     <div class="views tabs safe-areas">
@@ -1119,4 +1119,4 @@ ${o.toString()}`)}return s&&(typeof s=="string"?l+=`?${s}`:Object.keys(s).length
     </div>
 
   </div>
-`}}pn.id="20b28fbce8";var Ku=new ze({name:"Madani Trx",theme:"ios",darkMode:!0,colors:{primary:"#ff5200"},el:"#app",component:pn,store:gu,routes:mu,serviceWorker:{path:"/service-worker.js"}});"serviceWorker"in navigator&&navigator.serviceWorker.register("/service-worker.js").then(r=>{r.onupdatefound=()=>{const e=r.installing;e.onstatechange=()=>{e.state==="installed"&&navigator.serviceWorker.controller&&(alert("A new version is available. Refreshing..."),window.location.reload())}}});
+`}}pn.id="530ce8f126";var Ku=new ze({name:"Madani Trx",theme:"ios",darkMode:!0,colors:{primary:"#ff5200"},el:"#app",component:pn,store:gu,routes:mu,serviceWorker:{path:"/service-worker.js"}});"serviceWorker"in navigator&&navigator.serviceWorker.register("/service-worker.js").then(r=>{r.onupdatefound=()=>{const e=r.installing;e.onstatechange=()=>{e.state==="installed"&&navigator.serviceWorker.controller&&(alert("A new version is available. Refreshing..."),window.location.reload())}}});
