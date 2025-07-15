@@ -19,7 +19,7 @@ self.addEventListener('push', function(event) {
     const title = data.notification?.title || 'Push Notification';
     const options = {
       body: data.notification?.body || 'You have a new message.',
-      icon: '/icons/favicon.png', // <-- Your custom icon path
+      badge: '/icons/favicon.png', // <-- Your custom icon path
       // You can also add badge, image, etc.
     };
     event.waitUntil(
