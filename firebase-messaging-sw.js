@@ -13,20 +13,7 @@ firebase.initializeApp({
 
 const messaging = firebase.messaging();
 
-self.addEventListener('push', function(event) {
-  if (event.data) {
-    const data = event.data.json();
-    const title = data.notification?.title || 'Push Notification';
-    const options = {
-      body: data.notification?.body || 'You have a new message.',
-      badge: '/icons/favicon.png', // <-- Your custom icon path
-      // You can also add badge, image, etc.
-    };
-    event.waitUntil(
-      self.registration.showNotification(title, options)
-    );
-  }
-});
+
 
 self.addEventListener('notificationclick', function(event) {
   event.notification.close();
