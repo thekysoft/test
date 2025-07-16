@@ -245,7 +245,7 @@ ${o.toString()}`)}return s&&(typeof s=="string"?l+=`?${s}`:Object.keys(s).length
           </a>
         </div>
         <div class="title-large">
-          <div class="title-large-text">Madani TRX</div>
+          <div class="title-large-text">Madani TRX333</div>
         </div>
       </div>
     </div>
@@ -306,7 +306,7 @@ ${o.toString()}`)}return s&&(typeof s=="string"?l+=`?${s}`:Object.keys(s).length
       </div>
     </div>
   </div>
-`}}mi.id="70bf6921df";function gi(){return function(r){var e=r.$,t=r.$h,a=r.$root,s=r.$f7,n=r.$f7route,i=r.$f7router,l=r.$theme,o=r.$update,c=r.$store;return t`
+`}}mi.id="adfa3ca876";function gi(){return function(r){var e=r.$,t=r.$h,a=r.$root,s=r.$f7,n=r.$f7route,i=r.$f7router,l=r.$theme,o=r.$update,c=r.$store;return t`
 <div class="page" data-name="about">
   <div class="navbar">
     <div class="navbar-bg"></div>
@@ -335,7 +335,7 @@ ${o.toString()}`)}return s&&(typeof s=="string"?l+=`?${s}`:Object.keys(s).length
     </div>
   </div>
 </div>
-`}}gi.id="fb260d054c";function vi(){return function(r){var e=r.$,t=r.$h,a=r.$root,s=r.$f7,n=r.$f7route,i=r.$f7router,l=r.$theme,o=r.$update,c=r.$store;return t`
+`}}gi.id="e11016112d";function vi(){return function(r){var e=r.$,t=r.$h,a=r.$root,s=r.$f7,n=r.$f7route,i=r.$f7router,l=r.$theme,o=r.$update,c=r.$store;return t`
 <div class="page" data-name="form">
   <div class="navbar">
     <div class="navbar-bg"></div>
@@ -576,7 +576,7 @@ ${o.toString()}`)}return s&&(typeof s=="string"?l+=`?${s}`:Object.keys(s).length
     </div>
   </div>
 </div>
-`}}vi.id="8792096f0e";function bi(r,{$store:e}){const t=e.getters.products,a=()=>{e.dispatch("addProduct",{id:"4",title:"Apple iPhone 12",description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi tempora similique reiciendis, error nesciunt vero, blanditiis pariatur dolor, minima sed sapiente rerum, dolorem corrupti hic modi praesentium unde saepe perspiciatis."})};return function(s){var n=s.$,i=s.$h,l=s.$root,o=s.$f7,c=s.$f7route,d=s.$f7router,p=s.$theme,u=s.$update,f=s.$store;return i`
+`}}vi.id="f1807798dd";function bi(r,{$store:e}){const t=e.getters.products,a=()=>{e.dispatch("addProduct",{id:"4",title:"Apple iPhone 12",description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi tempora similique reiciendis, error nesciunt vero, blanditiis pariatur dolor, minima sed sapiente rerum, dolorem corrupti hic modi praesentium unde saepe perspiciatis."})};return function(s){var n=s.$,i=s.$h,l=s.$root,o=s.$f7,c=s.$f7route,d=s.$f7router,p=s.$theme,u=s.$update,f=s.$store;return i`
   <div class="page" data-name="catalog">
     <div class="navbar">
       <div class="navbar-bg"></div>
@@ -605,7 +605,7 @@ ${o.toString()}`)}return s&&(typeof s=="string"?l+=`?${s}`:Object.keys(s).length
       `}
     </div>
   </div>
-`}}bi.id="5fee5ae37c";function wi(r,{$f7route:e,$store:t}){const a=t.getters.products,s=e.params.id;let n;return a.value.forEach(i=>{i.id===s&&(n=i)}),function(i){var l=i.$,o=i.$h,c=i.$root,d=i.$f7,p=i.$f7route,u=i.$f7router,f=i.$theme,h=i.$update,m=i.$store;return o`
+`}}bi.id="08aa4c4f64";function wi(r,{$f7route:e,$store:t}){const a=t.getters.products,s=e.params.id;let n;return a.value.forEach(i=>{i.id===s&&(n=i)}),function(i){var l=i.$,o=i.$h,c=i.$root,d=i.$f7,p=i.$f7route,u=i.$f7router,f=i.$theme,h=i.$update,m=i.$store;return o`
   <div class="page" data-name="product">
     <div class="navbar">
       <div class="navbar-bg"></div>
@@ -626,7 +626,7 @@ ${o.toString()}`)}return s&&(typeof s=="string"?l+=`?${s}`:Object.keys(s).length
       </div>
     </div>
   </div>
-`}}wi.id="64076275e5";function yi(){return function(r){var e=r.$,t=r.$h,a=r.$root,s=r.$f7,n=r.$f7route,i=r.$f7router,l=r.$theme,o=r.$update,c=r.$store;return t`
+`}}wi.id="b4b9f1fe31";function yi(){return function(r){var e=r.$,t=r.$h,a=r.$root,s=r.$f7,n=r.$f7route,i=r.$f7router,l=r.$theme,o=r.$update,c=r.$store;return t`
 <div class="page" data-name="settings">
   <div class="navbar">
     <div class="navbar-bg"></div>
@@ -861,7 +861,7 @@ ${o.toString()}`)}return s&&(typeof s=="string"?l+=`?${s}`:Object.keys(s).length
     </div>
   </div>
 </div>
-`}}yi.id="b893f454db";function Gr(r,{$f7:e,$on:t,$onBeforeMount:a,$onMounted:s,$onBeforeUnmount:n,$onUnmounted:i}){let l="Jimmy",o=25,c=["Tennis","Chess","Football"];const d=()=>{e.dialog.alert("Hello World")};return a(()=>{console.log("onBeforeMount")}),s(()=>{console.log("onMounted")}),n(()=>{console.log("onBeforeUnmount")}),i(()=>{console.log("onUnmounted")}),t("pageMounted",(p,u)=>{console.log("pageMounted",u)}),t("pageInit",(p,u)=>{console.log("pageInit",u)}),t("pageBeforeIn",(p,u)=>{console.log("pageBeforeIn",u)}),t("pageAfterIn",(p,u)=>{console.log("pageAfterIn",u)}),t("pageBeforeOut",(p,u)=>{console.log("pageBeforeOut",u)}),t("pageAfterOut",(p,u)=>{console.log("pageAfterOut",u)}),t("pageBeforeRemove",(p,u)=>{console.log("pageBeforeRemove",u)}),function(p){var u=p.$,f=p.$h,h=p.$root,m=p.$f7,v=p.$f7route,b=p.$f7router,g=p.$theme,w=p.$update,E=p.$store;return f`
+`}}yi.id="e44fe2c8ee";function Gr(r,{$f7:e,$on:t,$onBeforeMount:a,$onMounted:s,$onBeforeUnmount:n,$onUnmounted:i}){let l="Jimmy",o=25,c=["Tennis","Chess","Football"];const d=()=>{e.dialog.alert("Hello World")};return a(()=>{console.log("onBeforeMount")}),s(()=>{console.log("onMounted")}),n(()=>{console.log("onBeforeUnmount")}),i(()=>{console.log("onUnmounted")}),t("pageMounted",(p,u)=>{console.log("pageMounted",u)}),t("pageInit",(p,u)=>{console.log("pageInit",u)}),t("pageBeforeIn",(p,u)=>{console.log("pageBeforeIn",u)}),t("pageAfterIn",(p,u)=>{console.log("pageAfterIn",u)}),t("pageBeforeOut",(p,u)=>{console.log("pageBeforeOut",u)}),t("pageAfterOut",(p,u)=>{console.log("pageAfterOut",u)}),t("pageBeforeRemove",(p,u)=>{console.log("pageBeforeRemove",u)}),function(p){var u=p.$,f=p.$h,h=p.$root,m=p.$f7,v=p.$f7route,b=p.$f7router,g=p.$theme,w=p.$update,E=p.$store;return f`
   <div class="page">
     <div class="navbar">
       <div class="navbar-bg"></div>
@@ -917,7 +917,7 @@ ${o.toString()}`)}return s&&(typeof s=="string"?l+=`?${s}`:Object.keys(s).length
       </div>
     </div>
   </div>
-`}}Gr.id="352e832042";Gr.style=`
+`}}Gr.id="5fe0f71a4e";Gr.style=`
   p {
     margin: 10px 0;
   }
@@ -948,7 +948,7 @@ ${o.toString()}`)}return s&&(typeof s=="string"?l+=`?${s}`:Object.keys(s).length
       </div>
     </div>
   </div>
-`}}Ei.id="1d8e7c5c87";function Ci(){return function(r){var e=r.$,t=r.$h,a=r.$root,s=r.$f7,n=r.$f7route,i=r.$f7router,l=r.$theme,o=r.$update,c=r.$store;return t`
+`}}Ei.id="ffcc7e832f";function Ci(){return function(r){var e=r.$,t=r.$h,a=r.$root,s=r.$f7,n=r.$f7route,i=r.$f7router,l=r.$theme,o=r.$update,c=r.$store;return t`
 <div class="page">
   <div class="navbar">
     <div class="navbar-bg"></div>
@@ -969,7 +969,7 @@ ${o.toString()}`)}return s&&(typeof s=="string"?l+=`?${s}`:Object.keys(s).length
     </div>
   </div>
 </div>
-`}}Ci.id="a7381e54a2";var dh=[{path:"/",component:mi},{path:"/about/",component:gi},{path:"/test/",componentUrl:"../pages/test.f7"},{path:"/form/",component:vi},{path:"/catalog/",component:bi},{path:"/product/:id/",component:wi},{path:"/settings/",component:yi},{path:"/dynamic-route/blog/:blogId/post/:postId/",component:Gr},{path:"/request-and-load/user/:userId/",async:function({router:r,to:e,resolve:t}){var a=r.app;a.preloader.show();var s=e.params.userId;setTimeout(function(){var n={firstName:"Vladimir",lastName:"Kharlampidi",about:"Hello, i am creator of Framework7! Hope you like it!",links:[{title:"Framework7 Website",url:"http://framework7.io"},{title:"Framework7 Forum",url:"http://forum.framework7.io"}]};a.preloader.hide(),t({component:Ei},{props:{user:n}})},1e3)}},{path:"(.*)",component:Ci}];Ue.use([qn]);Ve.use([Bn,Ln,Rn,Hn,Fn,_n,jr,Kn,Gn,Jn,Qn,Zn,ei,ti,ai,ri,si,ni]);const ph=xr({state:{products:[{id:"1",title:"Apple iPhone 8",description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi tempora similique reiciendis, error nesciunt vero, blanditiis pariatur dolor, minima sed sapiente rerum, dolorem corrupti hic modi praesentium unde saepe perspiciatis."},{id:"2",title:"Apple iPhone 8 Plus",description:"Velit odit autem modi saepe ratione totam minus, aperiam, labore quia provident temporibus quasi est ut aliquid blanditiis beatae suscipit odio vel! Nostrum porro sunt sint eveniet maiores, dolorem itaque!"},{id:"3",title:"Apple iPhone X",description:"Expedita sequi perferendis quod illum pariatur aliquam, alias laboriosam! Vero blanditiis placeat, mollitia necessitatibus reprehenderit. Labore dolores amet quos, accusamus earum asperiores officiis assumenda optio architecto quia neque, quae eum."}]},getters:{products({state:r}){return r.products}},actions:{addProduct({state:r},e){r.products=[...r.products,e]}}});function $i(r,{$f7:e,$update:t}){let a="",s="";const n=o=>{a=o.target.value,t()},i=o=>{s=o.target.value,t()},l=()=>{e.dialog.alert("Username: "+a+"<br/>Password: "+s,()=>{e.loginScreen.close()})};return function(o){var c=o.$,d=o.$h,p=o.$root,u=o.$f7,f=o.$f7route,h=o.$f7router,m=o.$theme,v=o.$update,b=o.$store;return d`
+`}}Ci.id="9458f5d143";var dh=[{path:"/",component:mi},{path:"/about/",component:gi},{path:"/test/",componentUrl:"../pages/test.f7"},{path:"/form/",component:vi},{path:"/catalog/",component:bi},{path:"/product/:id/",component:wi},{path:"/settings/",component:yi},{path:"/dynamic-route/blog/:blogId/post/:postId/",component:Gr},{path:"/request-and-load/user/:userId/",async:function({router:r,to:e,resolve:t}){var a=r.app;a.preloader.show();var s=e.params.userId;setTimeout(function(){var n={firstName:"Vladimir",lastName:"Kharlampidi",about:"Hello, i am creator of Framework7! Hope you like it!",links:[{title:"Framework7 Website",url:"http://framework7.io"},{title:"Framework7 Forum",url:"http://forum.framework7.io"}]};a.preloader.hide(),t({component:Ei},{props:{user:n}})},1e3)}},{path:"(.*)",component:Ci}];Ue.use([qn]);Ve.use([Bn,Ln,Rn,Hn,Fn,_n,jr,Kn,Gn,Jn,Qn,Zn,ei,ti,ai,ri,si,ni]);const ph=xr({state:{products:[{id:"1",title:"Apple iPhone 8",description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi tempora similique reiciendis, error nesciunt vero, blanditiis pariatur dolor, minima sed sapiente rerum, dolorem corrupti hic modi praesentium unde saepe perspiciatis."},{id:"2",title:"Apple iPhone 8 Plus",description:"Velit odit autem modi saepe ratione totam minus, aperiam, labore quia provident temporibus quasi est ut aliquid blanditiis beatae suscipit odio vel! Nostrum porro sunt sint eveniet maiores, dolorem itaque!"},{id:"3",title:"Apple iPhone X",description:"Expedita sequi perferendis quod illum pariatur aliquam, alias laboriosam! Vero blanditiis placeat, mollitia necessitatibus reprehenderit. Labore dolores amet quos, accusamus earum asperiores officiis assumenda optio architecto quia neque, quae eum."}]},getters:{products({state:r}){return r.products}},actions:{addProduct({state:r},e){r.products=[...r.products,e]}}});function $i(r,{$f7:e,$update:t}){let a="",s="";const n=o=>{a=o.target.value,t()},i=o=>{s=o.target.value,t()},l=()=>{e.dialog.alert("Username: "+a+"<br/>Password: "+s,()=>{e.loginScreen.close()})};return function(o){var c=o.$,d=o.$h,p=o.$root,u=o.$f7,f=o.$f7route,h=o.$f7router,m=o.$theme,v=o.$update,b=o.$store;return d`
   <div id="app">
 
     <!-- Left panel with cover effect-->
@@ -1136,7 +1136,7 @@ ${o.toString()}`)}return s&&(typeof s=="string"?l+=`?${s}`:Object.keys(s).length
     </div>
 
   </div>
-`}}$i.id="a5b0929758";const uh=()=>{};var ln={};/**
+`}}$i.id="3f3d958ab4";const uh=()=>{};var ln={};/**
  * @license
  * Copyright 2017 Google LLC
  *
