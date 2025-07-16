@@ -225,7 +225,7 @@ ${o.toString()}`)}return s&&(typeof s=="string"?l+=`?${s}`:Object.keys(s).length
       <div class="area-chart-tooltip-label">${u}</div>
       <div class="area-chart-tooltip-total">${f}</div>
       ${h}
-    `}setTooltip(){const e=this,{app:t,el:a,svgEl:s,hiddenDatasets:n,currentIndex:i,params:{tooltip:l,datasets:o}}=e;if(!l)return;if(!(o.filter((d,p)=>!n.includes(p)).length>0)){e.f7Tooltip&&e.f7Tooltip.hide&&e.f7Tooltip.hide();return}if(i!==null&&!e.f7Tooltip){e.f7Tooltip=t.tooltip.create({trigger:"manual",containerEl:a,targetEl:s.querySelector(`line[data-index="${i}"]`),text:e.formatTooltip(),cssClass:"area-chart-tooltip"}),e.f7Tooltip&&e.f7Tooltip.show&&e.f7Tooltip.show();return}!e.f7Tooltip||!e.f7Tooltip.hide||!e.f7Tooltip.show||(i!==null?(e.f7Tooltip.setText(e.formatTooltip()),e.f7Tooltip.setTargetEl(s.querySelector(`line[data-index="${i}"]`)),e.f7Tooltip.show()):e.f7Tooltip.hide())}setCurrentIndex(e){e!==this.currentIndex&&(this.currentIndex=e,this.$el.trigger("areachart:select",{index:e}),this.emit("local::select areaChartSelect",this,e),this.$svgEl.find("line").removeClass("area-chart-current-line"),this.$svgEl.find(`line[data-index="${e}"]`).addClass("area-chart-current-line"),this.setTooltip())}onLegendClick(e){const t=parseInt(y(e.target).closest(".area-chart-legend-item").attr("data-index"),10);this.toggleDataset(t)}onMouseEnter(){this.calcLinesOffsets()}onMouseMove(e){const t=this;t.linesOffsets||t.calcLinesOffsets();let a=e.pageX;typeof a>"u"&&(a=0);const s=t.linesOffsets.map(l=>Math.abs(a-l)),n=Math.min(...s),i=s.indexOf(n);t.setCurrentIndex(i)}onMouseLeave(){this.setCurrentIndex(null)}attachEvents(){const{svgEl:e,$el:t}=this;e&&(e.addEventListener("mouseenter",this.onMouseEnter),e.addEventListener("mousemove",this.onMouseMove),e.addEventListener("mouseleave",this.onMouseLeave),t.on("click",".area-chart-legend-item",this.onLegendClick))}detachEvents(){const{svgEl:e,$el:t}=this;e&&(e.removeEventListener("mouseenter",this.onMouseEnter),e.removeEventListener("mousemove",this.onMouseMove),e.removeEventListener("mouseleave",this.onMouseLeave),t.off("click",".area-chart-legend-item",this.onLegendClick))}render(){const e=this,{lineChart:t,toggleDatasets:a,width:s,height:n,axis:i,axisLabels:l,legend:o,datasets:c}=e.params,d=e.getChartData(),p=e.getVerticalLines(),u=e.getVisibleLabels(),f=a?"button":"span";return T("div",null,T("svg",{xmlns:"http://www.w3.org/2000/svg",width:s,height:n,viewBox:`0 0 ${s} ${n}`,preserveAspectRatio:"none"},d.map(h=>t?T("path",{stroke:h.color,"fill-rule":"evenodd",d:h.points}):T("polygon",{fill:h.color,"fill-rule":"evenodd",points:h.points})),p.map((h,m)=>T("line",{"data-index":m,fill:"#000",x1:h,y1:0,x2:h,y2:n}))),i&&T("div",{class:"area-chart-axis"},l.map(h=>T("span",null,u.includes(h)&&T("span",null,e.formatAxisLabel(h))))),o&&T("div",{class:"area-chart-legend"},c.map((h,m)=>T(f,{"data-index":m,class:`area-chart-legend-item ${a?"area-chart-legend-button":""}`,_type:a?"button":void 0},T("span",{style:`background-color: ${h.color}`}),e.formatLegendLabel(h.label)))))}update(e,t){e===void 0&&(e={}),t===void 0&&(t=!1);const a=this,{params:s}=a;if(Object.keys(e).forEach(l=>{typeof e[l]<"u"&&(s[l]=e[l])}),a.$svgEl.length===0)return a;a.detachEvents(),a.$svgEl.remove(),t||(a.$axisEl.remove(),a.$legendEl.remove());const n=y(a.render()),i=n.find("svg");if(H(a,{svgEl:i&&i[0],$svgEl:i}),!t){const l=n.find(".area-chart-axis"),o=n.find(".area-chart-legend");H(a,{$axisEl:l,$legendEl:o}),a.$el.append(l),a.$el.append(o)}return a.$el.prepend(i),a.attachEvents(),a}init(){const e=this,t=y(e.render()),a=t.find("svg"),s=t.find(".area-chart-axis"),n=t.find(".area-chart-legend");return H(e,{svgEl:a&&a[0],$svgEl:a,$axisEl:s,$legendEl:n}),e.$el.append(a),e.$el.append(s),e.$el.append(n),e.attachEvents(),e}destroy(){const e=this;!e.$el||e.destroyed||(e.$el.trigger("piechart:beforedestroy"),e.emit("local::beforeDestroy areaChartBeforeDestroy",e),e.detachEvents(),e.$svgEl.remove(),e.$axisEl.remove(),e.$legendEl.remove(),e.f7Tooltip&&e.f7Tooltip.destroy&&e.f7Tooltip.destroy(),delete e.$el[0].f7AreaChart,Ce(e),e.destroyed=!0)}};const ih={name:"areaChart",params:{areaChart:{el:null,lineChart:!1,datasets:[],axis:!1,axisLabels:[],tooltip:!1,legend:!1,toggleDatasets:!1,width:640,height:320,maxAxisLabels:8,formatAxisLabel:null,formatLegendLabel:null,formatTooltip:null,formatTooltipAxisLabel:null,formatTooltipTotal:null,formatTooltipDataset:null}},create(){const r=this;r.areaChart=xe({defaultSelector:".area-chart",constructor:nh,app:r,domProp:"f7AreaChart"}),r.areaChart.update=function(t,a){if(y(t).length===0)return;const n=r.areaChart.get(t);if(n)return n.update(a),n}}},oh={},lh={name:"breadrumbs",create(){Fe(this,{breadrumbs:oh})}},ch={name:"typography"};Ue.use([qn]);Ve.use([Bn,Ln,Rn,Hn,Fn,_n,jr,Kn,Gn,Jn,Qn,Zn,ei,ti,ai,ri,si,ni,Bd,Ld,Rd,Hd,Fd,zd,Nd,Vd,qd,Wd,Yd,Xd,Ud,Gd,Kd,Jd,Zd,ap,sp,np,cp,dp,pp,up,fp,hp,mp,gp,vp,bp,yp,Cp,$p,kp,Tp,Sp,Pp,Mp,Af,Df,Bf,Lf,Rf,Hf,Ff,Zf,th,ah,sh,ih,lh,ch]);function mi(){return function(r){var e=r.$,t=r.$h,a=r.$root,s=r.$f7,n=r.$f7route,i=r.$f7router,l=r.$theme,o=r.$update,c=r.$store;return t`
+    `}setTooltip(){const e=this,{app:t,el:a,svgEl:s,hiddenDatasets:n,currentIndex:i,params:{tooltip:l,datasets:o}}=e;if(!l)return;if(!(o.filter((d,p)=>!n.includes(p)).length>0)){e.f7Tooltip&&e.f7Tooltip.hide&&e.f7Tooltip.hide();return}if(i!==null&&!e.f7Tooltip){e.f7Tooltip=t.tooltip.create({trigger:"manual",containerEl:a,targetEl:s.querySelector(`line[data-index="${i}"]`),text:e.formatTooltip(),cssClass:"area-chart-tooltip"}),e.f7Tooltip&&e.f7Tooltip.show&&e.f7Tooltip.show();return}!e.f7Tooltip||!e.f7Tooltip.hide||!e.f7Tooltip.show||(i!==null?(e.f7Tooltip.setText(e.formatTooltip()),e.f7Tooltip.setTargetEl(s.querySelector(`line[data-index="${i}"]`)),e.f7Tooltip.show()):e.f7Tooltip.hide())}setCurrentIndex(e){e!==this.currentIndex&&(this.currentIndex=e,this.$el.trigger("areachart:select",{index:e}),this.emit("local::select areaChartSelect",this,e),this.$svgEl.find("line").removeClass("area-chart-current-line"),this.$svgEl.find(`line[data-index="${e}"]`).addClass("area-chart-current-line"),this.setTooltip())}onLegendClick(e){const t=parseInt(y(e.target).closest(".area-chart-legend-item").attr("data-index"),10);this.toggleDataset(t)}onMouseEnter(){this.calcLinesOffsets()}onMouseMove(e){const t=this;t.linesOffsets||t.calcLinesOffsets();let a=e.pageX;typeof a>"u"&&(a=0);const s=t.linesOffsets.map(l=>Math.abs(a-l)),n=Math.min(...s),i=s.indexOf(n);t.setCurrentIndex(i)}onMouseLeave(){this.setCurrentIndex(null)}attachEvents(){const{svgEl:e,$el:t}=this;e&&(e.addEventListener("mouseenter",this.onMouseEnter),e.addEventListener("mousemove",this.onMouseMove),e.addEventListener("mouseleave",this.onMouseLeave),t.on("click",".area-chart-legend-item",this.onLegendClick))}detachEvents(){const{svgEl:e,$el:t}=this;e&&(e.removeEventListener("mouseenter",this.onMouseEnter),e.removeEventListener("mousemove",this.onMouseMove),e.removeEventListener("mouseleave",this.onMouseLeave),t.off("click",".area-chart-legend-item",this.onLegendClick))}render(){const e=this,{lineChart:t,toggleDatasets:a,width:s,height:n,axis:i,axisLabels:l,legend:o,datasets:c}=e.params,d=e.getChartData(),p=e.getVerticalLines(),u=e.getVisibleLabels(),f=a?"button":"span";return T("div",null,T("svg",{xmlns:"http://www.w3.org/2000/svg",width:s,height:n,viewBox:`0 0 ${s} ${n}`,preserveAspectRatio:"none"},d.map(h=>t?T("path",{stroke:h.color,"fill-rule":"evenodd",d:h.points}):T("polygon",{fill:h.color,"fill-rule":"evenodd",points:h.points})),p.map((h,m)=>T("line",{"data-index":m,fill:"#000",x1:h,y1:0,x2:h,y2:n}))),i&&T("div",{class:"area-chart-axis"},l.map(h=>T("span",null,u.includes(h)&&T("span",null,e.formatAxisLabel(h))))),o&&T("div",{class:"area-chart-legend"},c.map((h,m)=>T(f,{"data-index":m,class:`area-chart-legend-item ${a?"area-chart-legend-button":""}`,_type:a?"button":void 0},T("span",{style:`background-color: ${h.color}`}),e.formatLegendLabel(h.label)))))}update(e,t){e===void 0&&(e={}),t===void 0&&(t=!1);const a=this,{params:s}=a;if(Object.keys(e).forEach(l=>{typeof e[l]<"u"&&(s[l]=e[l])}),a.$svgEl.length===0)return a;a.detachEvents(),a.$svgEl.remove(),t||(a.$axisEl.remove(),a.$legendEl.remove());const n=y(a.render()),i=n.find("svg");if(H(a,{svgEl:i&&i[0],$svgEl:i}),!t){const l=n.find(".area-chart-axis"),o=n.find(".area-chart-legend");H(a,{$axisEl:l,$legendEl:o}),a.$el.append(l),a.$el.append(o)}return a.$el.prepend(i),a.attachEvents(),a}init(){const e=this,t=y(e.render()),a=t.find("svg"),s=t.find(".area-chart-axis"),n=t.find(".area-chart-legend");return H(e,{svgEl:a&&a[0],$svgEl:a,$axisEl:s,$legendEl:n}),e.$el.append(a),e.$el.append(s),e.$el.append(n),e.attachEvents(),e}destroy(){const e=this;!e.$el||e.destroyed||(e.$el.trigger("piechart:beforedestroy"),e.emit("local::beforeDestroy areaChartBeforeDestroy",e),e.detachEvents(),e.$svgEl.remove(),e.$axisEl.remove(),e.$legendEl.remove(),e.f7Tooltip&&e.f7Tooltip.destroy&&e.f7Tooltip.destroy(),delete e.$el[0].f7AreaChart,Ce(e),e.destroyed=!0)}};const ih={name:"areaChart",params:{areaChart:{el:null,lineChart:!1,datasets:[],axis:!1,axisLabels:[],tooltip:!1,legend:!1,toggleDatasets:!1,width:640,height:320,maxAxisLabels:8,formatAxisLabel:null,formatLegendLabel:null,formatTooltip:null,formatTooltipAxisLabel:null,formatTooltipTotal:null,formatTooltipDataset:null}},create(){const r=this;r.areaChart=xe({defaultSelector:".area-chart",constructor:nh,app:r,domProp:"f7AreaChart"}),r.areaChart.update=function(t,a){if(y(t).length===0)return;const n=r.areaChart.get(t);if(n)return n.update(a),n}}},oh={},lh={name:"breadrumbs",create(){Fe(this,{breadrumbs:oh})}},ch={name:"typography"};Ue.use([qn]);Ve.use([Bn,Ln,Rn,Hn,Fn,_n,jr,Kn,Gn,Jn,Qn,Zn,ei,ti,ai,ri,si,ni,Bd,Ld,Rd,Hd,Fd,zd,Nd,Vd,qd,Wd,Yd,Xd,Ud,Gd,Kd,Jd,Zd,ap,sp,np,cp,dp,pp,up,fp,hp,mp,gp,vp,bp,yp,Cp,$p,kp,Tp,Sp,Pp,Mp,Af,Df,Bf,Lf,Rf,Hf,Ff,Zf,th,ah,sh,ih,lh,ch]);function mi(r,{$f7:e}){return function(t){var a=t.$,s=t.$h,n=t.$root,i=t.$f7,l=t.$f7route,o=t.$f7router,c=t.$theme,d=t.$update,p=t.$store;return s`
   <div class="page" data-name="home">
     <!-- Top Navbar -->
     <div class="navbar navbar-large">
@@ -245,7 +245,7 @@ ${o.toString()}`)}return s&&(typeof s=="string"?l+=`?${s}`:Object.keys(s).length
           </a>
         </div>
         <div class="title-large">
-          <div class="title-large-text">Madani TRX 1</div>
+          <div class="title-large-text">Madani TRX</div>
         </div>
       </div>
     </div>
@@ -253,9 +253,11 @@ ${o.toString()}`)}return s&&(typeof s=="string"?l+=`?${s}`:Object.keys(s).length
     <!-- Scrollable page content-->
     <div class="page-content">
       <div class="block">
-        <p>This is an example of tabs-layout application. The main point of such tabbed layout is that each tab contains independent view with its own routing and navigation.</p>
+        <p>This is an example of tabs-layout application. The main point of such tabbed layout is that each tab contains
+          independent view with its own routing and navigation.</p>
 
-        <p>Each tab/view may have different layout, different navbar type (dynamic, fixed or static) or without navbar like this tab.</p>
+        <p>Each tab/view may have different layout, different navbar type (dynamic, fixed or static) or without navbar
+          like this tab.</p>
       </div>
       <div class="block-title">Navigation</div>
       <div class="list list-strong inset list-dividers-ios">
@@ -304,7 +306,7 @@ ${o.toString()}`)}return s&&(typeof s=="string"?l+=`?${s}`:Object.keys(s).length
       </div>
     </div>
   </div>
-`}}mi.id="07702d804f";function gi(){return function(r){var e=r.$,t=r.$h,a=r.$root,s=r.$f7,n=r.$f7route,i=r.$f7router,l=r.$theme,o=r.$update,c=r.$store;return t`
+`}}mi.id="70bf6921df";function gi(){return function(r){var e=r.$,t=r.$h,a=r.$root,s=r.$f7,n=r.$f7route,i=r.$f7router,l=r.$theme,o=r.$update,c=r.$store;return t`
 <div class="page" data-name="about">
   <div class="navbar">
     <div class="navbar-bg"></div>
@@ -333,7 +335,7 @@ ${o.toString()}`)}return s&&(typeof s=="string"?l+=`?${s}`:Object.keys(s).length
     </div>
   </div>
 </div>
-`}}gi.id="d77f77ff62";function vi(){return function(r){var e=r.$,t=r.$h,a=r.$root,s=r.$f7,n=r.$f7route,i=r.$f7router,l=r.$theme,o=r.$update,c=r.$store;return t`
+`}}gi.id="fb260d054c";function vi(){return function(r){var e=r.$,t=r.$h,a=r.$root,s=r.$f7,n=r.$f7route,i=r.$f7router,l=r.$theme,o=r.$update,c=r.$store;return t`
 <div class="page" data-name="form">
   <div class="navbar">
     <div class="navbar-bg"></div>
@@ -574,7 +576,7 @@ ${o.toString()}`)}return s&&(typeof s=="string"?l+=`?${s}`:Object.keys(s).length
     </div>
   </div>
 </div>
-`}}vi.id="d061d04b8e";function bi(r,{$store:e}){const t=e.getters.products,a=()=>{e.dispatch("addProduct",{id:"4",title:"Apple iPhone 12",description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi tempora similique reiciendis, error nesciunt vero, blanditiis pariatur dolor, minima sed sapiente rerum, dolorem corrupti hic modi praesentium unde saepe perspiciatis."})};return function(s){var n=s.$,i=s.$h,l=s.$root,o=s.$f7,c=s.$f7route,d=s.$f7router,p=s.$theme,u=s.$update,f=s.$store;return i`
+`}}vi.id="8792096f0e";function bi(r,{$store:e}){const t=e.getters.products,a=()=>{e.dispatch("addProduct",{id:"4",title:"Apple iPhone 12",description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi tempora similique reiciendis, error nesciunt vero, blanditiis pariatur dolor, minima sed sapiente rerum, dolorem corrupti hic modi praesentium unde saepe perspiciatis."})};return function(s){var n=s.$,i=s.$h,l=s.$root,o=s.$f7,c=s.$f7route,d=s.$f7router,p=s.$theme,u=s.$update,f=s.$store;return i`
   <div class="page" data-name="catalog">
     <div class="navbar">
       <div class="navbar-bg"></div>
@@ -603,7 +605,7 @@ ${o.toString()}`)}return s&&(typeof s=="string"?l+=`?${s}`:Object.keys(s).length
       `}
     </div>
   </div>
-`}}bi.id="4c6dda8ac5";function wi(r,{$f7route:e,$store:t}){const a=t.getters.products,s=e.params.id;let n;return a.value.forEach(i=>{i.id===s&&(n=i)}),function(i){var l=i.$,o=i.$h,c=i.$root,d=i.$f7,p=i.$f7route,u=i.$f7router,f=i.$theme,h=i.$update,m=i.$store;return o`
+`}}bi.id="5fee5ae37c";function wi(r,{$f7route:e,$store:t}){const a=t.getters.products,s=e.params.id;let n;return a.value.forEach(i=>{i.id===s&&(n=i)}),function(i){var l=i.$,o=i.$h,c=i.$root,d=i.$f7,p=i.$f7route,u=i.$f7router,f=i.$theme,h=i.$update,m=i.$store;return o`
   <div class="page" data-name="product">
     <div class="navbar">
       <div class="navbar-bg"></div>
@@ -624,7 +626,7 @@ ${o.toString()}`)}return s&&(typeof s=="string"?l+=`?${s}`:Object.keys(s).length
       </div>
     </div>
   </div>
-`}}wi.id="beddccea97";function yi(){return function(r){var e=r.$,t=r.$h,a=r.$root,s=r.$f7,n=r.$f7route,i=r.$f7router,l=r.$theme,o=r.$update,c=r.$store;return t`
+`}}wi.id="64076275e5";function yi(){return function(r){var e=r.$,t=r.$h,a=r.$root,s=r.$f7,n=r.$f7route,i=r.$f7router,l=r.$theme,o=r.$update,c=r.$store;return t`
 <div class="page" data-name="settings">
   <div class="navbar">
     <div class="navbar-bg"></div>
@@ -859,7 +861,7 @@ ${o.toString()}`)}return s&&(typeof s=="string"?l+=`?${s}`:Object.keys(s).length
     </div>
   </div>
 </div>
-`}}yi.id="810bd93f05";function Gr(r,{$f7:e,$on:t,$onBeforeMount:a,$onMounted:s,$onBeforeUnmount:n,$onUnmounted:i}){let l="Jimmy",o=25,c=["Tennis","Chess","Football"];const d=()=>{e.dialog.alert("Hello World")};return a(()=>{console.log("onBeforeMount")}),s(()=>{console.log("onMounted")}),n(()=>{console.log("onBeforeUnmount")}),i(()=>{console.log("onUnmounted")}),t("pageMounted",(p,u)=>{console.log("pageMounted",u)}),t("pageInit",(p,u)=>{console.log("pageInit",u)}),t("pageBeforeIn",(p,u)=>{console.log("pageBeforeIn",u)}),t("pageAfterIn",(p,u)=>{console.log("pageAfterIn",u)}),t("pageBeforeOut",(p,u)=>{console.log("pageBeforeOut",u)}),t("pageAfterOut",(p,u)=>{console.log("pageAfterOut",u)}),t("pageBeforeRemove",(p,u)=>{console.log("pageBeforeRemove",u)}),function(p){var u=p.$,f=p.$h,h=p.$root,m=p.$f7,v=p.$f7route,b=p.$f7router,g=p.$theme,w=p.$update,E=p.$store;return f`
+`}}yi.id="b893f454db";function Gr(r,{$f7:e,$on:t,$onBeforeMount:a,$onMounted:s,$onBeforeUnmount:n,$onUnmounted:i}){let l="Jimmy",o=25,c=["Tennis","Chess","Football"];const d=()=>{e.dialog.alert("Hello World")};return a(()=>{console.log("onBeforeMount")}),s(()=>{console.log("onMounted")}),n(()=>{console.log("onBeforeUnmount")}),i(()=>{console.log("onUnmounted")}),t("pageMounted",(p,u)=>{console.log("pageMounted",u)}),t("pageInit",(p,u)=>{console.log("pageInit",u)}),t("pageBeforeIn",(p,u)=>{console.log("pageBeforeIn",u)}),t("pageAfterIn",(p,u)=>{console.log("pageAfterIn",u)}),t("pageBeforeOut",(p,u)=>{console.log("pageBeforeOut",u)}),t("pageAfterOut",(p,u)=>{console.log("pageAfterOut",u)}),t("pageBeforeRemove",(p,u)=>{console.log("pageBeforeRemove",u)}),function(p){var u=p.$,f=p.$h,h=p.$root,m=p.$f7,v=p.$f7route,b=p.$f7router,g=p.$theme,w=p.$update,E=p.$store;return f`
   <div class="page">
     <div class="navbar">
       <div class="navbar-bg"></div>
@@ -915,7 +917,7 @@ ${o.toString()}`)}return s&&(typeof s=="string"?l+=`?${s}`:Object.keys(s).length
       </div>
     </div>
   </div>
-`}}Gr.id="46a95891c7";Gr.style=`
+`}}Gr.id="352e832042";Gr.style=`
   p {
     margin: 10px 0;
   }
@@ -946,7 +948,7 @@ ${o.toString()}`)}return s&&(typeof s=="string"?l+=`?${s}`:Object.keys(s).length
       </div>
     </div>
   </div>
-`}}Ei.id="2c740a8e37";function Ci(){return function(r){var e=r.$,t=r.$h,a=r.$root,s=r.$f7,n=r.$f7route,i=r.$f7router,l=r.$theme,o=r.$update,c=r.$store;return t`
+`}}Ei.id="1d8e7c5c87";function Ci(){return function(r){var e=r.$,t=r.$h,a=r.$root,s=r.$f7,n=r.$f7route,i=r.$f7router,l=r.$theme,o=r.$update,c=r.$store;return t`
 <div class="page">
   <div class="navbar">
     <div class="navbar-bg"></div>
@@ -967,7 +969,7 @@ ${o.toString()}`)}return s&&(typeof s=="string"?l+=`?${s}`:Object.keys(s).length
     </div>
   </div>
 </div>
-`}}Ci.id="748061ed68";var dh=[{path:"/",component:mi},{path:"/about/",component:gi},{path:"/form/",component:vi},{path:"/catalog/",component:bi},{path:"/product/:id/",component:wi},{path:"/settings/",component:yi},{path:"/dynamic-route/blog/:blogId/post/:postId/",component:Gr},{path:"/request-and-load/user/:userId/",async:function({router:r,to:e,resolve:t}){var a=r.app;a.preloader.show();var s=e.params.userId;setTimeout(function(){var n={firstName:"Vladimir",lastName:"Kharlampidi",about:"Hello, i am creator of Framework7! Hope you like it!",links:[{title:"Framework7 Website",url:"http://framework7.io"},{title:"Framework7 Forum",url:"http://forum.framework7.io"}]};a.preloader.hide(),t({component:Ei},{props:{user:n}})},1e3)}},{path:"(.*)",component:Ci}];Ue.use([qn]);Ve.use([Bn,Ln,Rn,Hn,Fn,_n,jr,Kn,Gn,Jn,Qn,Zn,ei,ti,ai,ri,si,ni]);const ph=xr({state:{products:[{id:"1",title:"Apple iPhone 8",description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi tempora similique reiciendis, error nesciunt vero, blanditiis pariatur dolor, minima sed sapiente rerum, dolorem corrupti hic modi praesentium unde saepe perspiciatis."},{id:"2",title:"Apple iPhone 8 Plus",description:"Velit odit autem modi saepe ratione totam minus, aperiam, labore quia provident temporibus quasi est ut aliquid blanditiis beatae suscipit odio vel! Nostrum porro sunt sint eveniet maiores, dolorem itaque!"},{id:"3",title:"Apple iPhone X",description:"Expedita sequi perferendis quod illum pariatur aliquam, alias laboriosam! Vero blanditiis placeat, mollitia necessitatibus reprehenderit. Labore dolores amet quos, accusamus earum asperiores officiis assumenda optio architecto quia neque, quae eum."}]},getters:{products({state:r}){return r.products}},actions:{addProduct({state:r},e){r.products=[...r.products,e]}}});function $i(r,{$f7:e,$update:t}){let a="",s="";const n=o=>{a=o.target.value,t()},i=o=>{s=o.target.value,t()},l=()=>{e.dialog.alert("Username: "+a+"<br/>Password: "+s,()=>{e.loginScreen.close()})};return function(o){var c=o.$,d=o.$h,p=o.$root,u=o.$f7,f=o.$f7route,h=o.$f7router,m=o.$theme,v=o.$update,b=o.$store;return d`
+`}}Ci.id="a7381e54a2";var dh=[{path:"/",component:mi},{path:"/about/",component:gi},{path:"/test/",componentUrl:"../pages/test.f7"},{path:"/form/",component:vi},{path:"/catalog/",component:bi},{path:"/product/:id/",component:wi},{path:"/settings/",component:yi},{path:"/dynamic-route/blog/:blogId/post/:postId/",component:Gr},{path:"/request-and-load/user/:userId/",async:function({router:r,to:e,resolve:t}){var a=r.app;a.preloader.show();var s=e.params.userId;setTimeout(function(){var n={firstName:"Vladimir",lastName:"Kharlampidi",about:"Hello, i am creator of Framework7! Hope you like it!",links:[{title:"Framework7 Website",url:"http://framework7.io"},{title:"Framework7 Forum",url:"http://forum.framework7.io"}]};a.preloader.hide(),t({component:Ei},{props:{user:n}})},1e3)}},{path:"(.*)",component:Ci}];Ue.use([qn]);Ve.use([Bn,Ln,Rn,Hn,Fn,_n,jr,Kn,Gn,Jn,Qn,Zn,ei,ti,ai,ri,si,ni]);const ph=xr({state:{products:[{id:"1",title:"Apple iPhone 8",description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi tempora similique reiciendis, error nesciunt vero, blanditiis pariatur dolor, minima sed sapiente rerum, dolorem corrupti hic modi praesentium unde saepe perspiciatis."},{id:"2",title:"Apple iPhone 8 Plus",description:"Velit odit autem modi saepe ratione totam minus, aperiam, labore quia provident temporibus quasi est ut aliquid blanditiis beatae suscipit odio vel! Nostrum porro sunt sint eveniet maiores, dolorem itaque!"},{id:"3",title:"Apple iPhone X",description:"Expedita sequi perferendis quod illum pariatur aliquam, alias laboriosam! Vero blanditiis placeat, mollitia necessitatibus reprehenderit. Labore dolores amet quos, accusamus earum asperiores officiis assumenda optio architecto quia neque, quae eum."}]},getters:{products({state:r}){return r.products}},actions:{addProduct({state:r},e){r.products=[...r.products,e]}}});function $i(r,{$f7:e,$update:t}){let a="",s="";const n=o=>{a=o.target.value,t()},i=o=>{s=o.target.value,t()},l=()=>{e.dialog.alert("Username: "+a+"<br/>Password: "+s,()=>{e.loginScreen.close()})};return function(o){var c=o.$,d=o.$h,p=o.$root,u=o.$f7,f=o.$f7route,h=o.$f7router,m=o.$theme,v=o.$update,b=o.$store;return d`
   <div id="app">
 
     <!-- Left panel with cover effect-->
@@ -1009,19 +1011,24 @@ ${o.toString()}`)}return s&&(typeof s=="string"?l+=`?${s}`:Object.keys(s).length
       <div class="toolbar toolbar-bottom tabbar-icons">
         <div class="toolbar-inner">
           <a href="#view-home" class="tab-link tab-link-active">
-            <i class="icon f7-icons if-not-md">house_fill</i>
-            <i class="icon material-icons if-md">home</i>
+            <i class="icon f7-icons">house_fill</i>
             <span class="tabbar-label">Home</span>
           </a>
-          <a href="#view-catalog" class="tab-link">
-            <i class="icon f7-icons if-not-md">square_list_fill</i>
-            <i class="icon material-icons if-md">view_list</i>
-            <span class="tabbar-label">Catalog</span>
+          <a href="#view-gift" class="tab-link">
+            <i class="icon f7-icons">gift_fill</i>
+            <span class="tabbar-label">Gift</span>
           </a>
-          <a href="#view-settings" class="tab-link">
-            <i class="icon f7-icons if-not-md">gear</i>
-            <i class="icon material-icons if-md">settings</i>
-            <span class="tabbar-label">Settings</span>
+          <a href="#view-delivered" class="tab-link">
+            <i class="icon f7-icons">smiley_fill</i>
+            <span class="tabbar-label">Delivered</span>
+          </a>
+          <a href="#view-inventory" class="tab-link">
+            <i class="icon f7-icons">car_fill</i>
+            <span class="tabbar-label">Inventory</span>
+          </a>
+          <a href="#view-profile" class="tab-link">
+            <i class="icon f7-icons">person_fill</i>
+            <span class="tabbar-label">Profile</span>
           </a>
         </div>
       </div>
@@ -1040,6 +1047,27 @@ ${o.toString()}`)}return s&&(typeof s=="string"?l+=`?${s}`:Object.keys(s).length
       <div id="view-settings" class="view view-init tab" data-name="settings" data-url="/settings/">
         <!-- Settings page will be loaded here dynamically from /settings/ route -->
       </div>
+
+      <!-- Gift View -->
+      <div id="view-gift" class="view view-init tab" data-name="gift" data-url="/about/">
+        <!-- Gift page will be loaded here dynamically from /gift/ route -->
+      </div>
+
+      <!-- Delivered View -->
+      <div id="view-delivered" class="view view-init tab" data-name="delivered" data-url="/delivered/">
+        <!-- Delivered page will be loaded here dynamically from /delivered/ route -->
+      </div>
+
+      <!-- Inventory View -->
+      <div id="view-inventory" class="view view-init tab" data-name="inventory" data-url="/inventory/">
+        <!-- Inventory page will be loaded here dynamically from /inventory/ route -->  
+      </div>
+
+      <!-- Profile View -->
+      <div id="view-profile" class="view view-init tab" data-name="profile" data-url="/profile/">
+        <!-- Profile page will be loaded here dynamically from /profile/ route -->
+      </div>
+
     </div>
 
 
@@ -1108,7 +1136,7 @@ ${o.toString()}`)}return s&&(typeof s=="string"?l+=`?${s}`:Object.keys(s).length
     </div>
 
   </div>
-`}}$i.id="10c39687d3";const uh=()=>{};var ln={};/**
+`}}$i.id="a5b0929758";const uh=()=>{};var ln={};/**
  * @license
  * Copyright 2017 Google LLC
  *
@@ -1408,7 +1436,7 @@ ${o.toString()}`)}return s&&(typeof s=="string"?l+=`?${s}`:Object.keys(s).length
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */const Kv=4*60*60*1e3;/**
+ */const Jv=4*60*60*1e3;/**
  * @license
  * Copyright 2020 Google LLC
  *
@@ -2351,4 +2379,4 @@ ${o.toString()}`)}return s&&(typeof s=="string"?l+=`?${s}`:Object.keys(s).length
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */function dv(r=xm()){return lv().then(e=>{if(!e)throw He.create("unsupported-browser")},e=>{throw He.create("indexed-db-unsupported")}),Qr(Kr(r),"messaging").getImmediate()}async function pv(r,e){return r=Kr(r),so(r,e)}function uv(r,e){return r=Kr(r),cv(r,e)}ov();const fv={apiKey:"AIzaSyBrXqJtMqghnsL2KE4MxTbrp3iwVhU8e8o",authDomain:"madani-trx.firebaseapp.com",projectId:"madani-trx",storageBucket:"madani-trx.firebasestorage.app",messagingSenderId:"300456169703",appId:"1:300456169703:web:284e47a7cc2f5316ad9242",measurementId:"G-LZCQMKRJCP"},Jv=new Ve({name:"Madani TRX",theme:"ios",colors:{primary:"#e7660c"},darkMode:!0,el:"#app",component:$i,store:ph,routes:dh});"serviceWorker"in navigator&&navigator.serviceWorker.register("/service-worker.js");const hv=Ai(fv),no=dv(hv);function mv(){Notification.requestPermission().then(r=>{r==="granted"?pv(no,{vapidKey:"BGzc3_4We8m9paGdMhEZku3vAgn1K7EBC6Nf13vt6xR8VdMVtSVzB-nSGe8P02QI3L9miQtb4TUdi-ffzTDguOY"}).then(e=>{e?(console.log("FCM Token:",e),fetch("https://us-central1-madani-trx.cloudfunctions.net/registerTokenToTopic",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({token:e,topic:"all"})}).then(t=>t.json()).then(t=>{console.log("Token registered to topic:",t)}).catch(t=>{console.error("Error registering token to topic:",t)})):console.warn("No FCM token received.")}).catch(e=>{console.error("FCM getToken error:",e)}):console.warn("Notifications not granted")})}mv();uv(no,r=>{console.log("Foreground push received:",r),r.notification&&alert(`Notification: ${r.notification.title} - ${r.notification.body}`)});
+ */function dv(r=xm()){return lv().then(e=>{if(!e)throw He.create("unsupported-browser")},e=>{throw He.create("indexed-db-unsupported")}),Qr(Kr(r),"messaging").getImmediate()}async function pv(r,e){return r=Kr(r),so(r,e)}function uv(r,e){return r=Kr(r),cv(r,e)}ov();const fv={apiKey:"AIzaSyBrXqJtMqghnsL2KE4MxTbrp3iwVhU8e8o",authDomain:"madani-trx.firebaseapp.com",projectId:"madani-trx",storageBucket:"madani-trx.firebasestorage.app",messagingSenderId:"300456169703",appId:"1:300456169703:web:284e47a7cc2f5316ad9242",measurementId:"G-LZCQMKRJCP"},hv=new Ve({name:"Madani TRX",theme:"ios",colors:{primary:"#e7660c"},darkMode:!0,el:"#app",component:$i,store:ph,routes:dh,initOnDeviceReady:!0,swipeBack:!1,view:{pushState:!0}});"serviceWorker"in navigator&&navigator.serviceWorker.register("/service-worker.js");const mv=Ai(fv),no=dv(mv);function gv(){Notification.requestPermission().then(r=>{r==="granted"?pv(no,{vapidKey:"BGzc3_4We8m9paGdMhEZku3vAgn1K7EBC6Nf13vt6xR8VdMVtSVzB-nSGe8P02QI3L9miQtb4TUdi-ffzTDguOY"}).then(e=>{e?console.log("FCM Token:",e):console.warn("No FCM token received.")}).catch(e=>{console.error("FCM getToken error:",e)}):console.warn("Notifications not granted")})}gv();uv(no,r=>{console.log("Foreground push received:",r),r.notification&&hv.dialog.create({title:"Notification",text:`<div>${r.notification.title}</div><div>${r.notification.body}</div>`,buttons:[{text:"Close",close:!0}]}).open()});
