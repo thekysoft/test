@@ -13,27 +13,3 @@ firebase.initializeApp({
 
 const messaging = firebase.messaging();
 
-
-self.addEventListener('notificationclick', function (event) {
-    event.notification.close();
-
-    // Define the URL you want to open (your PWA's root or a specific page)
-    const urlToOpen = '/'; // or 'https://yourdomain.com/'
-
-    event.waitUntil(
-        clients.matchAll({ type: 'window', includeUncontrolled: true }).then(function (clientList) {
-            // If a window/tab is already open, focus it
-            for (let i = 0; i < clientList.length; i++) {
-                const client = clientList[i];
-                // Check if the client URL matches your PWA's root
-                if (client.url.includes(urlToOpen) && 'focus' in client) {
-                    return client.focus();
-                }
-            }
-            // Otherwise, open a new tab/window
-            if (clients.openWindow) {
-                return clients.openWindow(urlToOpen);
-            }
-        })
-    );
-});
